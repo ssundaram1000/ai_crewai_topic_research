@@ -1,5 +1,5 @@
 import streamlit as st
-from main import ResearchCrew  # Import the ResearchCrew class from main.py
+from new_project.crew import NewProjectCrew
 import os
 
 st.title('Your Research Assistant')
@@ -17,7 +17,7 @@ if st.button('Run Research'):
         st.error("Please fill all the fields.")
     else:
         inputs = f"Research Topic: {topic}\nDetailed Questions: {detailed_questions}"
-        research_crew = ResearchCrew(inputs)
+        research_crew = NewProjectCrew(inputs)
         result = research_crew.run()
         st.subheader("Results of your research project:")
         st.write(result)
